@@ -1,0 +1,245 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  background: #fff;
+  color: #222;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navbar */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 10;
+}
+.logo {
+  width: 120px; /* Sesuaikan ukuran logo */
+  height: auto;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.nav-links a:hover {
+  color: #667eea;
+  transition: color 0.3s;
+}
+
+/* Modal untuk zoom */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  margin-top: 40px;
+  text-align: center;
+  overflow: visible;
+}
+.hero .background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 10rem;
+  color: #f0f0f0;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 0.25em;
+  white-space: nowrap;
+  z-index: 0;
+}
+.hero img.main-phone {
+  max-width: 640px;
+  width: 80vw;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 12px 16px rgba(0,0,0,0.12));
+  border-radius: 16px;
+}
+
+/* Info Stats below hero */
+.hero-info {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #444;
+  letter-spacing: 1px;
+  user-select: none;
+  z-index: 1;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-info div span {
+  display: block;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #667eea;
+  margin-bottom: 6px;
+}
+.hero-info div small {
+  font-weight: 600;
+  color: #777;
+  letter-spacing: 0.06em;
+}
+
+/* Thumbnail Gallery */
+.thumbnail-row {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  user-select: none;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  position: relative;
+}
+.thumbnail-row img {
+  width: 124px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  opacity: 0.6;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  border: 3px solid transparent;
+}
+.thumbnail-row img.active,
+.thumbnail-row img:hover {
+  opacity: 1;
+  box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+  border-color: #667eea;
+}
+
+/* Sections */
+section {
+  max-width: 900px;
+  margin: 96px auto 72px;
+  padding: 0 16px;
+}
+section h2 {
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: #222;
+  margin-bottom: 24px;
+}
+section p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+/* Special highlight for lists */
+ul {
+  margin-left: 20px;
+  list-style-type: disc;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #ddd;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .thumbnail-row img {
+    width: 90px;
+    height: 58px;
+  }
+  section {
+    margin: 48px 16px 48px;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 24px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .hero .background-text {
+    font-size: 5rem;
+    letter-spacing: 0.15em;
+  }
+}
